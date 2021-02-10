@@ -4,8 +4,8 @@ public class Radio {
     private int stationNumber;
     private int stationVolume;
 
-    final int firstStation = 0, lastStation = 9;
-    final int minVolume = 0, maxVolume = 10;
+    final static int firstStation = 0, lastStation = 9;
+    final static int minVolume = 0, maxVolume = 10;
 
     public int next(){
         int stationNumber = getStationNumber();

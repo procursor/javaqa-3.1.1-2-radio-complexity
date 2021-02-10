@@ -8,25 +8,25 @@ class RadioTest {
     Radio station = new Radio();
 
     @Test
-    void tuneNextStationNormal() {
+    void shouldIncrementStationNumber() {
         station.tune(5);
         assertEquals(6, station.next());
     }
 
     @Test
-    void tunePrevStationNormal() {
+    void shouldDecrementStationNumber() {
         station.tune(5);
         assertEquals(4, station.prev());
     }
 
     @Test
-    void tuneNextStationBeyondLast() {
+    void shouldSetFirstStationNumberOnIncrement() {
         station.tune(9);
         assertEquals(0, station.next());
     }
 
     @Test
-    void tunePrevStationBeyondFirst() {
+    void shouldSetLastStationNumberOnDecrement() {
 /*      Radio station.stationNumber should be initialized by 0 on object creation
         station.tune(0);
 */
@@ -34,12 +34,12 @@ class RadioTest {
     }
 
     @Test
-    void tuneStationBeyondFirst() {
+    void shouldNotSetStationIfNumberLessThanFirstStation() {
         station.tune(5);
         assertEquals(5, station.tune(-10));
     }
     @Test
-    void tuneStationBeyondLast() {
+    void shouldNotSetStationIfNumberGreaterThanLastStation() {
         station.tune(5);
         assertEquals(5, station.tune(10));
     }
