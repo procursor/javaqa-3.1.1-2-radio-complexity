@@ -5,6 +5,9 @@ HELP.md
 build/
 target/
 
+### PlantUML
+*.puml
+
 ### STS ###
 .apt_generated
 .classpath
