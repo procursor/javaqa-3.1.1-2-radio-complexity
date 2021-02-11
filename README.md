@@ -1,3 +1,5 @@
+![Java CI](https://github.com/procursor/smarthome-3.1.1-2-radio-complexity/workflows/Java%20CI/badge.svg)
+
 # Цикломатическая сложность кода
 
 Есть несколько формул для вычисления ЦС. В любом случае, для их понимания сначала необходимо усвоить общую теорию графов и иметь представление о графе потока управления программы (Control Flow Graph, далее CFG).
@@ -46,7 +48,7 @@ public int next() {
 
 Теперь построим блок-схему метода (CFG activity diagram):
 
-![Control Flow Graph](https://app.code2flow.com/Odmx0A.svg)
+<img alt="Control Flow Graph" src="https://app.code2flow.com/Odmx0A.svg" width="450px" />
 
 На диаграмме наглядно видно, что в этом методе есть только два линейно независимых маршрута. Соответственно, по определению: ЦС = 2.
 
