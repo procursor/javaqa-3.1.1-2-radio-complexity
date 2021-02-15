@@ -1,10 +1,11 @@
 package ru.netology.smarthome;
 
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import org.junit.jupiter.api.Test;
+
 class RadioTest {
+
     Radio station = new Radio();
 
     /*
@@ -12,9 +13,7 @@ class RadioTest {
      *
      * Два теста на проверку граничных условий *публичного* метода: int tune(int)
      * на тот случай, если его позовут с некоректным параметром номера станции,
-     * выходящим за границы условия:
-     *
-     * "Номер текущей радиостанции изменяется в пределах от 0 до 9".
+     * выходящим за границы условия: "Номер текущей радиостанции изменяется в пределах от 0 до 9".
      *
      * В таком случае номер текущей р/с после попытки такой настройки должен остаться неизменным.
      */
@@ -70,20 +69,22 @@ class RadioTest {
     @Test
     void shouldSetLastStationNumberOnDecrement() {
 /*      Radio station.stationNumber should be initialized by 0 on object creation
-        station.tune(0);
+
+		station.tune(0);
 */
         assertEquals(9, station.prev());
     }
 
-/*
- * проверки регулирования громкости
- */
+
+    /*
+     * проверки регулировки громкости
+     */
 
     /*
     7. должен увеличивать громкость на единицу
      */
     @Test
-    void shouldIncrementVol(){
+    void shouldIncrementVol() {
         station.volume(5);
         assertEquals(6, station.volUp());
     }
@@ -92,7 +93,7 @@ class RadioTest {
     8. должен уменьшать громкость на единицу
      */
     @Test
-    void shouldDecrementVol(){
+    void shouldDecrementVol() {
         station.volume(5);
         assertEquals(4, station.volDn());
     }
@@ -101,16 +102,16 @@ class RadioTest {
     9. НЕ должен увеличивать максимальную громкость (> 10)
      */
     @Test
-    void shouldNotIncreaseVolAboveMax(){
+    void shouldNotIncreaseVolAboveMax() {
         station.volume(10);
         assertEquals(10, station.volUp());
     }
 
     /*
-    10. НЕ должен уменьшать минимальную громкость (< 0)
-     */
+ 	10. НЕ должен уменьшать минимальную громкость (< 0)
+	*/
     @Test
-    void shouldNotDecreaseVolBelowMin(){
+    void shouldNotDecreaseVolBelowMin() {
         station.volume(0);
         assertEquals(0, station.volDn());
     }
